@@ -36,44 +36,31 @@
 
     <body>
 <div class="container"><br>
-  <h1> How to use tile maps from Mapbox? </h1><br><br>
+  <h1> How to use tilesets from Mapbox? </h1><br><br>
   <div class="row">
       <div class="box">
   <ul>
-      <li>In your <code>basemap.html</code>, replace the <code>L.tileLayer()</code> portion with the following lines. <br>
+      <li>In your <code>basemap.html</code>, <b>REPLACE</b> the <code>L.tileLayer()</code> portion with the following lines. <br>
           Note you will need to modify the <span class="hljs-string" style="color:red">red</span> highlighted portion according to the requirements. <br>
       <pre>L.tileLayer(<span class="hljs-string" style="color:#cc6600">'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}'</span>, {
     attribution: <span class="hljs-string" style="color:#cc6600">'Map data &amp;copy; </span><span class="text-cut" data-cut="[…]"style="color:#cc6600"><span class="hljs-string"style="color:#cc6600">&lt;a href="http://openstreetmap.org"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="http://mapbox.com"&gt;Mapbox&lt;/a&gt;</span></span><span class="hljs-string">'</span>,
     maxZoom: <span class="hljs-number" style="color:blue">18</span>,
-    id: <span class="hljs-string">'</span><span class="hljs-string" style="color:red">map id (to be replaced by you, see below)</span><span class="hljs-string">'</span>,
+    id: <span class="hljs-string">'</span><span class="hljs-string" style="color:red">tileset id (to be replaced by you, see below)</span><span class="hljs-string">'</span>,
     accessToken: <span class="hljs-string">'</span><span class="hljs-string" style="color:red">your mapbox public access token (to be replaced, see below)</span><span class="hljs-string">'</span>
 }).addTo(map);</pre>
 
 </li>
-<h3>About Map id</h3>
-<li>For Mapbox tiles, a map id is used to define <b>which mapbox basemap to be used</b>. For example, <b>mapbox.light</b> is a light color canvas. <br><br>See the list of available mapbox map ids below. Click on the map ids to see their examples. The map IDs should be surrounded by quotation marks in the code.<br><br>
-<li><b>Mapbox classis map IDs:</b>
-  <ul>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/streets-v10.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0" target="_blank"><span style="font-size: 18px">mapbox.streets</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/light-v9.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0" target="_blank"><span style="font-size: 18px">mapbox.light</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/dark-v9.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0" target="_blank"><span style="font-size: 18px">mapbox.dark</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/satellite-v9.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#2/0/0" target="_blank"><span style="font-size: 18px">mapbox.satellite</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA#0.77/0/0" target="_blank"><span style="font-size: 18px">mapbox.streets-satellite</span></a></li>
-      <li><a href="https://neiugis.github.io/wheatpaste/" target="_blank"><span style="font-size: 18px">mapbox.wheatpaste</span></a></li>
-      <li><a href="https://neiugis.github.io/comic/" target="_blank"><span style="font-size: 18px">mapbox.comic</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/mapbox/outdoors-v10.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#5.3/40.783/-85.495" target="_blank"><span style="font-size: 18px">mapbox.outdoors</span></a></li>
-      <li><a href="https://neiugis.github.io/run-bike-hike/" target="_blank"><span style="font-size: 18px">mapbox.run-bike-hike</span></a></li>
-      <li><a href="https://neiugis.github.io/pencil/" target="_blank"><span style="font-size: 18px">mapbox.pencil</span></a></li>
-      <li><a href="https://api.mapbox.com/styles/v1/tempgeocent/cj2qe6qid003a2rmrquvqgbcx.html?title=true&access_token=pk.eyJ1IjoidGVtcGdlb2NlbnQiLCJhIjoiY2l1YTNmenEyMDAwdDJ6cWZxbG55Yjg4OSJ9.QRTz4Pi3096MtXKc_QgpWQ#15/37.0229/-76.34211" target="_blank"><span style="font-size: 18px">mapbox.pirates</span></a></li>
-      <li><a href="https://www.mapbox.com/bites/00108/#9/40.0000/-74.5000" target="_blank"><span style="font-size: 18px">mapbox.emerald</span></a></li>
-      <li><a href="https://neiugis.github.io/highcontrast/" target="_blank"><span style="font-size: 18px">mapbox.high-contrast</span></a></li>
-  </ul>
-</li>
-        <!-- <img src="ids.PNG" width=75%> -->
+<h3>About Tileset ID</h3>
+      <li>For Mapbox tiles, a tileset id (previously known as map id) is used to define <b>which mapbox basemap to be used</b>. A tileset ID always starts with your Mapbox username, followed by the tileset's unique alphanumeric identifier: <code>username.identifier</code>. </li>
+      
+      <li>To find the tileset ID for a specific tileset, go to your <a href="https://studio.mapbox.com/tilesets/" target="_blank">tilesets page</a>. Click the options menu (see image below) to the right of a tileset's name to find its tileset ID. </li><br><br>
+         <img src="ids.PNG" width=75%> 
+      <li>In addition to these default tilesets, Mapbox offers a collection of ready to use styles. Click <a href="" target="_blank">here</a> to access the map gallery and you can add these styles to your account for customize and use.</li>
 
 <br><br>
 <h3>About Access Token</h3>
-<li>Sign up for an account on <a href="https://www.mapbox.com/studio/signup/?path=%2Faccount%2Fapps" target="_blank">Mapbox</a>, then go to your <b>Account</b> page > <b> Access tokens</b>, then copy your <b>Default public token</b> (see image below).
+<li>Sign up for an account on <a href="https://account.mapbox.com/auth/signup/" target="_blank">Mapbox</a></li>
+      <li>Then go to your <b>Account</b> page > <b> Tokens</b>, then copy your <b>Default public token</b> (see image below).
       <br><br>
       <img src="tokens.png" width=100%><br><br></li>
       <li>
